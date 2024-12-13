@@ -17,6 +17,7 @@ public class MenuService(IContactService contactService) : IMenuService
 
         do
         {
+            Console.Clear();
             Console.WriteLine("  *------------- MENY ------------*");
             Console.WriteLine("  | 1. Add Contact:               |");
             Console.WriteLine("  | 2. Show ContactList:          |");
@@ -30,7 +31,6 @@ public class MenuService(IContactService contactService) : IMenuService
                 case "1":
                     CreateContacts();
                     break;
-
                 case "2":
                     ShowContacts();
                     break;
@@ -53,13 +53,13 @@ public class MenuService(IContactService contactService) : IMenuService
     {
         var contact = ContactFactory.CreateContact();
 
-        Console.Write("Enter your FirstName:");
+        Console.Write("Enter your Firstname:");
         contact.FirstName = Console.ReadLine()!;
-        Console.Write("Enter your LastName: ");
+        Console.Write("Enter your Lastname: ");
         contact.LastName = Console.ReadLine()!;
         Console.Write("Enter your Email: ");
         contact.Email = Console.ReadLine()!;
-        Console.Write("Enter your Phone: ");
+        Console.Write("Enter your Phone number: ");
         contact.Phone = Console.ReadLine()!;
         Console.Write("Enter your Street: ");
         contact.Street = Console.ReadLine()!;
@@ -68,6 +68,7 @@ public class MenuService(IContactService contactService) : IMenuService
         Console.Write("Enter your City: ");
         contact.City = Console.ReadLine()!;
 
+       
         _contactService.CreateContact(contact);
 
     }

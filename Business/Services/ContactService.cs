@@ -7,7 +7,7 @@ public class ContactService(IFileService fileService) : IContactService
 {
 
     private readonly IFileService _fileService = fileService;
-    private List<ContactRegForm> _contacts = new();
+    private List<ContactRegForm> _contacts = (List<ContactRegForm>)fileService.GetContactList();
 
 
     public void CreateContact(ContactRegForm contactRegForm)
@@ -15,6 +15,10 @@ public class ContactService(IFileService fileService) : IContactService
         _contacts.Add(contactRegForm);
         _fileService.SaveContactToList(_contacts);
     }
+
+
+
+
 
     public IEnumerable<ContactRegForm> GetContacts()
     {
