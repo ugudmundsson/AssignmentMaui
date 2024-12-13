@@ -1,10 +1,12 @@
-﻿namespace Business.Interface;
+﻿using Business.Models;
+
+namespace Business.Interface;
 
 public interface IFileService
 {
 
-    bool SaveContactToList();
+    bool SaveContactToList(List<ContactRegForm> list);
 
-    string GetContactList();
+    IEnumerable<ContactRegForm> GetContactList();
 
 }
