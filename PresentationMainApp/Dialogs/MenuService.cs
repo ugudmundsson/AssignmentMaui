@@ -20,10 +20,10 @@ public class MenuService(IContactService contactService) : IMenuService
             Console.Clear();
             Console.WriteLine("  *------------- MENY ------------*");
             Console.WriteLine("  | 1. Add Contact:               |");
-            Console.WriteLine("  | 2. Show ContactList:          |");
+            Console.WriteLine("  | 2. Show Contactlist:          |");
             Console.WriteLine("  | Q. Exit AppConsole            |");
             Console.WriteLine("  `-------------------------------´");
-            Console.Write("");
+            Console.WriteLine("");
             Console.Write("Your Choice: ");
             string option = Console.ReadLine()!;
             switch (option.ToLower())
@@ -59,17 +59,21 @@ public class MenuService(IContactService contactService) : IMenuService
         contact.LastName = Console.ReadLine()!;
         Console.Write("Enter your Email: ");
         contact.Email = Console.ReadLine()!;
-        Console.Write("Enter your Phone number: ");
+        Console.Write("Enter your Phonenumber: ");
         contact.Phone = Console.ReadLine()!;
         Console.Write("Enter your Street: ");
         contact.Street = Console.ReadLine()!;
-        Console.Write("Enter your ZipCodeNr: ");
+        Console.Write("Enter your ZipCode: ");
         contact.ZipCode = Console.ReadLine()!;
         Console.Write("Enter your City: ");
         contact.City = Console.ReadLine()!;
-
+        Console.WriteLine("");
        
         _contactService.CreateContact(contact);
+
+        
+        Console.WriteLine(" Press 'Enter' for return to menu.");
+        Console.ReadKey();
 
     }
 
@@ -83,6 +87,13 @@ public class MenuService(IContactService contactService) : IMenuService
 
     public void ShowContacts()
     {
+
+        Console.Clear();
+
+        Console.WriteLine("");
+        Console.WriteLine("---------- All Contacts -----------");
+        Console.WriteLine("");
+
         var contacts = _contactService.GetContacts();
         if (contacts.Count() == 0)
         {
@@ -91,17 +102,20 @@ public class MenuService(IContactService contactService) : IMenuService
         }
         foreach (var contact in contacts)
         {
+            
             Console.WriteLine($"{"Id: ", -20}{contact.Id}");
             Console.WriteLine($"{"Name:",-20}{contact.FirstName}, {contact.LastName}");
             Console.WriteLine($"{"Email:",-20}{contact.Email}");
             Console.WriteLine($"{"Phone:",-20}{contact.Phone}");
-            Console.WriteLine($"{"StreetNr:",-20}{contact.Street}");
+            Console.WriteLine($"{"Street:",-20}{contact.Street}");
             Console.WriteLine($"{"ZipCode/City:",-20}{contact.ZipCode}, {contact.City}");
             Console.WriteLine();
         }
-         
+        
+        Console.WriteLine(" Press 'Enter' for return to menu.");
+        Console.ReadKey();
 
-
+        
 
     }
 

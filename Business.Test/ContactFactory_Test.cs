@@ -19,6 +19,5 @@ public class ContactFactory_Test
         Assert.NotNull(result);
         Assert.IsType<ContactRegForm>(result);
 
-    }
-    
+    }   
 }
