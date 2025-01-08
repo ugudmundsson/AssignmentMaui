@@ -18,6 +18,7 @@ public class MenuService(IContactService contactService) : IMenuService
         do
         {
             Console.Clear();
+            Console.WriteLine("");
             Console.WriteLine("  *------------- MENY ------------*");
             Console.WriteLine("  | 1. Add Contact:               |");
             Console.WriteLine("  | 2. Show Contactlist:          |");
