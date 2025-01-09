@@ -8,4 +8,6 @@ public interface IContactService
 
     public IEnumerable<ContactRegForm> GetContacts();
 
+    public bool RemoveContactFromList(ContactRegForm contact);
+
 }

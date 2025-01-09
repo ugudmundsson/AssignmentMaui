@@ -7,7 +7,11 @@ public class ContactService(IFileService fileService) : IContactService
 {
 
     private readonly IFileService _fileService = fileService;
-    private List<ContactRegForm> _contacts = (List<ContactRegForm>)fileService.GetContactList();
+
+    /// <summary>
+    /// Denna kod string löste ChatGPT
+    /// </summary>
+    public List<ContactRegForm> _contacts { get; private set; } = (List<ContactRegForm>)fileService.GetContactList().ToList() ?? new List<ContactRegForm>();
 
 
     public void CreateContact(ContactRegForm contactRegForm)
@@ -24,5 +28,25 @@ public class ContactService(IFileService fileService) : IContactService
     {
         return _fileService.GetContactList();
     }
+
+
+    public bool RemoveContactFromList(ContactRegForm contact)
+    {
+        if (!string.IsNullOrWhiteSpace(contact.FirstName))
+        {
+            var existingContact = _contacts.FirstOrDefault(x => x.FirstName == contact.FirstName);
+            if (existingContact != null)
+            {
+                _contacts.Remove(existingContact);
+                _fileService.SaveContactToList(_contacts);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+
 
 }

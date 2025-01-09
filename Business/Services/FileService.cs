@@ -12,7 +12,7 @@ public class FileService : IFileService
     private readonly JsonSerializerOptions _jsonSerializerOptions;
 
 
-    public FileService(string fileName = "contactlist.json", string directoryPath = "Data")
+    public FileService(string fileName = "contactlist.json", string directoryPath = "C:\\Users\\ugudm\\source\\repos\\ugudmundsson\\Assignnment\\MauiApp1\\Data")
     {
         _directoryPath = directoryPath;
         _filePath = Path.Combine(_directoryPath, fileName);
@@ -59,6 +59,9 @@ public class FileService : IFileService
 
         }
     }
+
+
+
 
 
 }

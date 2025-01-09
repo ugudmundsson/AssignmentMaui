@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Business.Interface;
+using Business.Services;
+using MauiApp1.ViewModels;
+using Microsoft.Extensions.Logging;
 
 namespace MauiApp1
 {
@@ -15,10 +18,13 @@ namespace MauiApp1
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-#if DEBUG
-    		builder.Logging.AddDebug();
-#endif
+            builder.Services.AddTransient<MainViewModel>();
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddSingleton<IFileService, FileService>();
+            builder.Services.AddSingleton<IContactService, ContactService>();
 
+
+    		builder.Logging.AddDebug();
             return builder.Build();
         }
     }
