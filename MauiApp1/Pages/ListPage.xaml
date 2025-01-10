@@ -24,7 +24,7 @@
             <CollectionView Grid.Row="0" ItemsSource="{Binding ContactList}" Margin="0,40,0,0">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="{x:Type model:ContactRegForm}">
-                        <Grid ColumnDefinitions="*, auto">
+                        <Grid ColumnDefinitions="*, auto, auto">
                             <VerticalStackLayout Grid.Column="0" Margin="0,10,0,0">
                                 <Label>
                                     <Label.Text>
@@ -71,12 +71,20 @@
                                     </Label.Text>
                                 </Label>
                             </VerticalStackLayout>
-                            <Button Grid.Column="1" 
-                        HeightRequest="20"
-                        Margin="0,20,0,0"
-                        Text="X" 
-                        Command="{Binding Path=RemoveContactFromListCommand, Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel}}}" 
-                        CommandParameter="{Binding .}"/>
+                            <VerticalStackLayout Grid.Column="1">
+                                <Button  
+                                        HeightRequest="20"
+                                        Margin="0,20,0,0"
+                                        Text="X" 
+                                        Command="{Binding Path=RemoveContactFromListCommand, Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel}}}" 
+                                        CommandParameter="{Binding .}"/>
+                                <Button Grid.Column="2" 
+                                        HeightRequest="20"
+                                        Margin="0,20,0,0"
+                                        Text="EDIT" 
+                                        Command="{Binding Path=RemoveContactFromListCommand, Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel}}}" 
+                                        CommandParameter="{Binding .}"/>
+                            </VerticalStackLayout>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
