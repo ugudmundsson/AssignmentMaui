@@ -2,11 +2,45 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.Pages.AddPage"
-             Title="AddPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            
+             xmlns:model="clr-namespace:Business.Models;assembly=Business"
+             xmlns:viewmodels="clr-namespace:MauiApp1.ViewModels"
+             x:DataType="{x:Type viewmodels:MainViewModel}"
+             
+             Title="Add Contact">
+
+
+    <ScrollView>
+        <Grid RowDefinitions="auto, *" 
+              Margin="20"
+              RowSpacing="0">
+        <Label Text="Please fill out this form" 
+               HorizontalOptions="Center"
+               />
+                
+        <VerticalStackLayout Grid.Row="0" Margin="10,40,10,0">
+            <Label Text="First Name." Margin="0,10"/>
+            <Entry Text="{Binding RegistrationForm.FirstName}"/>
+            <Label Text="Last Name." Margin="0,10"/>
+            <Entry Text="{Binding RegistrationForm.LastName}"/>
+            <Label Text="Email." Margin="0,10"/>
+            <Entry Text="{Binding RegistrationForm.Email}"/>
+            <Label Text="Phone nr." Margin="0,10"/>
+            <Entry Text="{Binding RegistrationForm.Phone}"/>
+            <Label Text="Street." Margin="0,10"/>
+            <Entry Text="{Binding RegistrationForm.Street}"/>
+            <Label Text="City." Margin="0,10"/>
+            <Entry Text="{Binding RegistrationForm.City}"/>
+            <Label Text="ZipCode." Margin="0,10"/>
+            <Entry Text="{Binding RegistrationForm.ZipCode}"/>
+            <Button Command="{Binding CreateContactCommand}" 
+            Text="Add Contact to list" 
+            Margin="0,20,0,20" 
+            Padding="0,10"
+            WidthRequest="200"/>
+        </VerticalStackLayout>
+       </Grid>
+    </ScrollView>
+    
+    
 </ContentPage>

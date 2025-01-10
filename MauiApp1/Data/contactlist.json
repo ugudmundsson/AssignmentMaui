@@ -1,12 +1,32 @@
 [
   {
-    "Id": "7ae578e4-f0b1-4ed3-82fc-675f3a19295c",
+    "Id": "5b1aa002-6db6-4161-a0af-c3b219e90f2a",
     "FirstName": "Ulf",
     "LastName": "Gudmundsson",
     "Email": "u.gudmundsson@gmail.com",
     "Phone": "070 81 82 119",
     "Street": "Bjerstorpsv\u00E4gen 21",
-    "ZipCode": "621 62",
+    "ZipCode": "621 61",
     "City": "Visby"
+  },
+  {
+    "Id": "4be58e51-aab4-477e-b220-b2426d9de783",
+    "FirstName": "emilie",
+    "LastName": "jensen",
+    "Email": "emilie@jensen.com",
+    "Phone": "0124003504545",
+    "Street": "bjerstorpsv\u00E4gen 21",
+    "ZipCode": "621 62",
+    "City": "visby"
+  },
+  {
+    "Id": "55fb77a7-3214-47b7-950c-0f35f080029c",
+    "FirstName": "apa",
+    "LastName": "apa",
+    "Email": "apa",
+    "Phone": "apa",
+    "Street": "apa",
+    "ZipCode": "apa",
+    "City": "apa"
   }
 ]

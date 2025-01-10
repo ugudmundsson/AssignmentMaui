@@ -17,7 +17,7 @@
 #if WINDOWS
         if (DeviceInfo.Idiom == DeviceIdiom.Desktop)
         {
-            window.Width = 500;
+            window.Width = 1000;
             window.Height = 1000;
         }
 #endif

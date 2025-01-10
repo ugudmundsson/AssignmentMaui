@@ -35,28 +35,6 @@ public partial class MainViewModel : ObservableObject
 
 
     [RelayCommand]
-    public async Task NavigateToAddPage()
-    {
-        try
-        {
-            await Shell.Current.GoToAsync(nameof(AddPage));
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Navigation failed: {ex.Message}");
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-    [RelayCommand]
     public void CreateContact()
     {
         if (RegistrationForm != null && !string.IsNullOrWhiteSpace(RegistrationForm.FirstName))
@@ -82,6 +60,14 @@ public partial class MainViewModel : ObservableObject
             }
         }
     }
+
+    [RelayCommand]
+    public async Task NavigateToAddPage()
+    {
+        await Shell.Current.GoToAsync(nameof(AddPage));
+    }
+
+
 
    public void UpdateContact()
     {
