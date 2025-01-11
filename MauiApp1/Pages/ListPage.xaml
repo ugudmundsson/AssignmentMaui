@@ -75,7 +75,7 @@
                                 <Button  
                                         HeightRequest="20"
                                         Margin="0,20,0,0"
-                                        Text="X" 
+                                        Text="DELETE" 
                                         Command="{Binding Path=RemoveContactFromListCommand, Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel}}}" 
                                         CommandParameter="{Binding .}"/>
                                 <Button Grid.Column="2" 
