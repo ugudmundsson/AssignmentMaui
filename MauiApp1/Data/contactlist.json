@@ -28,5 +28,25 @@
     "Street": "player1",
     "ZipCode": "player1",
     "City": "player1"
+  },
+  {
+    "Id": "303b20f5-6005-4bc3-9b78-611b96b96085",
+    "FirstName": "emilie",
+    "LastName": "emilie",
+    "Email": "emilie",
+    "Phone": "emilie",
+    "Street": "emilie",
+    "ZipCode": "621 62",
+    "City": "emilie"
+  },
+  {
+    "Id": "fa2ffc35-115f-4892-ae40-594727fbed38",
+    "FirstName": "ulf",
+    "LastName": "gudmundsson",
+    "Email": "u.gudmundsson@gmail.com",
+    "Phone": "070 8182 119",
+    "Street": "bjerstorpsv\u00E4gen 21",
+    "ZipCode": "621 62",
+    "City": "visby"
   }
 ]

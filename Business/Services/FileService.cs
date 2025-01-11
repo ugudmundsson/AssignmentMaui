@@ -11,10 +11,10 @@ public class FileService : IFileService
     private readonly string _filePath;
     private readonly JsonSerializerOptions _jsonSerializerOptions;
 
-
-    public FileService(string fileName = "contactlist.json", string directoryPath = "C:\\Users\\ugudm\\source\\repos\\ugudmundsson\\Assignnment\\MauiApp1\\Data")
+    //Fick hjälp av tobbas i klassen för smidigare directoryPath
+    public FileService(string fileName = "contactlist.json", string directoryPath = null!)
     {
-        _directoryPath = directoryPath;
+        _directoryPath = directoryPath ?? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ContactApp", "Data");
         _filePath = Path.Combine(_directoryPath, fileName);
         _jsonSerializerOptions = new JsonSerializerOptions { WriteIndented = true };
     }
